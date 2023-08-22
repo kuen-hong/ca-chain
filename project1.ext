@@ -1,0 +1,4 @@
+[ intermediate_ca ]
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer
+basicConstraints = CA:true, pathlen:0

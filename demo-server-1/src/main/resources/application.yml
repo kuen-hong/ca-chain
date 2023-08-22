@@ -1,0 +1,6 @@
+server:
+  ssl:
+    key-store: classpath:server1.p12
+    key-store-password: abcd
+    key-store-type: pkcs12
+  port: 8581
