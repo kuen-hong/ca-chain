@@ -1,9 +1,9 @@
 # 信任鏈POC
 此實驗將自簽根憑證，並由根憑證簽出一個中繼憑證，在由中繼憑證簽出兩個終端憑證(server 1, server2)，server使用spring boot實作，驗證信任鏈。
 
-POC 1: 作業系統安裝自簽根憑證，`curl`命令呼叫 server 1 或 server 2 不須 bypass 憑證驗證
-POC 2: JVM truststore 匯入 server 1 憑證，server 2 呼叫 server 1 HTTPS API不須忽略憑證驗證
-POC 3: server 2 JVM options 指定 truststore，server 2 呼叫 server 1 HTTPS API不須忽略憑證驗證
+- POC 1: 作業系統安裝自簽根憑證，`curl`命令呼叫 server 1 或 server 2 不須 bypass 憑證驗證
+- POC 2: JVM truststore 匯入 server 1 憑證，server 2 呼叫 server 1 HTTPS API不須忽略憑證驗證
+- POC 3: server 2 JVM options 指定 truststore，server 2 呼叫 server 1 HTTPS API不須忽略憑證驗證
 
 以下私鑰密碼皆為: `abcd`
 
@@ -46,7 +46,6 @@ openssl genrsa -aes256 -out project1.key 4096
 
 建立 CSR(Certificate Signing Request)
 ```
-openssl req -sha256 -new -key project1.key -out project1.csr
 openssl req -sha256 -new -key project1.key -out project1.csr
 Enter pass phrase for project1.key:
 You are about to be asked to enter information that will be incorporated
